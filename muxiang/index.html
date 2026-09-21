@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>幕享-智能多屏协同与无线投屏工具</title>
+    <meta name="description" content="幕享提供专业的一键投屏、多屏同屏、无线投屏解决方案，支持手机、电脑、电视等多设备互联，低延迟、高清流畅，适用于会议演示、家庭娱乐、在线教育等场景。">
+    <meta name="keywords" content="幕享,无线投屏,多屏协同,手机投屏,电脑投屏,电视投屏,会议投屏">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0066ff;
+            --primary-hover: #0052cc;
+            --secondary-color: #f0f4ff;
+            --text-main: #1f2937;
+            --text-secondary: #6b7280;
+            --bg-body: #ffffff;
+            --bg-alt: #f9fafb;
+            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-body);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-main);
+            font-size: 16px;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .btn-download {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+
+        .btn-download:hover {
+            background-color: var(--primary-hover);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0 60px;
+            background: linear-gradient(180deg, var(--bg-alt) 0%, var(--bg-body) 100%);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: var(--text-main);
+            letter-spacing: -0.02em;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 60px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background-color: white;
+            color: var(--text-main);
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            border: 2px solid #e5e7eb;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .app-showcase {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: var(--radius-lg);
+            box-shadow: 0 20px 40px -10px rgba(0, 102, 255, 0.15);
+            padding: 10px;
+            overflow: hidden;
+        }
+
+        .app-window {
+            background: #f3f4f6;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            aspect-ratio: 16/9;
+        }
+
+        .app-window img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .floating-badge {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.75);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .badge-1 { top: 20px; left: 20px; }
+        .badge-2 { bottom: 30px; right: 30px; }
+
+        /* Features Section */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 36px;
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+            font-size: 18px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            padding: 40px 30px;
+            background: white;
+            border-radius: var(--radius-md);
+            border: 1px solid #f0f0f0;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow);
+            border-color: var(--secondary-color);
+        }
+
+        .feature-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--secondary-color);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            color: var(--primary-color);
+        }
+
+        .feature-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 16px;
+        }
+
+        /* Use Cases */
+        .bg-alt {
+            background-color: var(--bg-alt);
+        }
+
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .case-item {
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+        }
+
+        .case-number {
+            font-size: 48px;
+            font-weight: 800;
+            color: rgba(0, 102, 255, 0.1);
+            line-height: 1;
+        }
+
+        .case-content h3 {
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .case-content p {
+            color: var(--text-secondary);
+        }
+
+        /* Devices Section */
+        .devices-section {
+            text-align: center;
+        }
+
+        .device-logos {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 40px;
+            opacity: 0.7;
+        }
+
+        .device-item {
+            font-weight: 600;
+            font-size: 18px;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #e5e7eb;
+            margin-bottom: 10px;
+        }
+
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            background: none;
+            border: none;
+            padding: 24px 0;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-main);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 24px;
+            color: var(--primary-color);
+        }
+
+        .faq-question.active::after {
+            content: '-';
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            color: var(--text-secondary);
+        }
+
+        .faq-answer p {
+            padding-bottom: 24px;
+        }
+
+        /* Footer */
+        footer {
+            background: #111827;
+            color: #d1d5db;
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h2 {
+            color: white;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand p {
+            max-width: 300px;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding-top: 30px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 32px; }
+            .nav-links { display: none; }
+            .cases-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .app-showcase { aspect-ratio: 4/3; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+                幕享
+            </a>
+            <nav class="nav-links">
+                <a href="#features">功能特性</a>
+                <a href="#scenarios">应用场景</a>
+                <a href="#faq">常见问题</a>
+                <a href="#download">下载中心</a>
+            </nav>
+            <a href="#download" class="btn-download">立即下载</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>无线投屏，大屏同步</h1>
+                <p>无需复杂线缆，通过 Wi-Fi 或 DLNA 即可将手机、电脑内容一键投射至电视、投影仪或大屏显示器，高清流畅，体验升级。</p>
+                <div class="hero-actions">
+                    <a href="#download" class="btn-primary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        下载客户端
+                    </a>
+                    <a href="#features" class="btn-secondary">了解功能</a>
+                </div>
+
+                <div class="app-showcase">
+                    <div class="app-window">
+                        <!-- Placeholder for visual representation of screen mirroring -->
+                        <img src="https://picsum.photos/seed/tech/900/500.jpg" alt="幕享多屏协同演示界面">
+                    </div>
+                    <div class="floating-badge badge-1">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                        稳定连接
+                    </div>
+                    <div class="floating-badge badge-2">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                        4K 高清
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>核心功能</h2>
+                    <p>专为多场景打造的投屏解决方案，简单易用，性能卓越。</p>
+                </div>
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+                        </div>
+                        <h3>极速投屏</h3>
+                        <p>采用自研传输协议，大幅降低延迟，确保演示内容与本地画面毫秒级同步，告别卡顿。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg>
+                        </div>
+                        <h3>多设备兼容</h3>
+                        <p>完美支持 Android、iOS、Windows、macOS 等主流操作系统，连接方式灵活多样。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                        </div>
+                        <h3>无损画质</h3>
+                        <p>支持 1080P 及 4K 分辨率传输，色彩还原真实，无论是观看视频还是展示文档都清晰可见。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        </div>
+                        <h3>多屏互动</h3>
+                        <p>不仅支持投屏，还支持多台设备同时接入，适合小组协作、在线教学及家庭娱乐聚会。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                        </div>
+                        <h3>安全加密</h3>
+                        <p>传输过程采用端到端加密技术，保护您的隐私数据，让投屏更加安心可靠。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                        </div>
+                        <h3>一键控制</h3>
+                        <p>支持在投屏状态下使用手机控制大屏，包括翻页、批注、截图等功能，操作更便捷。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scenarios Section -->
+        <section id="scenarios" class="section bg-alt">
+            <div class="container">
+                <div class="section-header">
+                    <h2>应用场景</h2>
+                    <p>从商务办公到家庭娱乐，幕享无处不在。</p>
+                </div>
+                <div class="cases-grid">
+                    <div class="case-item">
+                        <div class="case-number">01</div>
+                        <div class="case-content">
+                            <h3>商务办公演示</h3>
+                            <p>在会议室中，无需连接 HDMI 线，手机或平板直接连接投影仪，快速展示 PPT、PDF 文档，会议效率倍增。</p>
+                        </div>
+                    </div>
+                    <div class="case-item">
+                        <div class="case-number">02</div>
+                        <div class="case-content">
+                            <h3>在线教育直播</h3>
+                            <p>教师可将课件、白板内容实时投射到电子白板或大屏，学生通过幕享观看，实现沉浸式远程教学。</p>
+                        </div>
+                    </div>
+                    <div class="case-item">
+                        <div class="case-number">03</div>
+                        <div class="case-content">
+                            <h3>家庭影院体验</h3>
+                            <p>将手机里的电影、游戏画面无线投射到智能电视上，配合大屏音响，享受影院级的视听盛宴。</p>
+                        </div>
+                    </div>
+                    <div class="case-item">
+                        <div class="case-number">04</div>
+                        <div class="case-content">
+                            <h3>游戏竞技直播</h3>
+                            <p>高帧率投屏技术，让玩家可以轻松将游戏画面分享给观众，开启精彩的互动直播。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Devices Section -->
+        <section class="section devices-section">
+            <div class="container">
+                <h2>支持多种设备连接</h2>
+                <div class="device-logos">
+                    <div class="device-item">📱 智能手机</div>
+                    <div class="device-item">💻 笔记本电脑</div>
+                    <div class="device-item">🖥️ 台式电脑</div>
+                    <div class="device-item">📺 智能电视</div>
+                    <div class="device-item">📽️ 投影仪</div>
+                    <div class="device-item">🖥️ 显示器</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section bg-alt">
+            <div class="container">
+                <div class="section-header">
+                    <h2>常见问题</h2>
+                    <p>关于幕享投屏的疑问解答。</p>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question">幕享需要网络环境吗？</button>
+                        <div class="faq-answer">
+                            <p>是的，幕享依赖局域网（Wi-Fi）进行数据传输。在投屏前，请确保发送端和接收端设备连接在同一个 Wi-Fi 网络下。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">投屏画面有延迟怎么办？</button>
+                        <div class="faq-answer">
+                            <p>建议关闭其他占用带宽的应用程序。如果是使用 Wi-Fi 投屏，请确保路由器信号强度良好，距离适中。幕享支持 DLNA 协议，在路由器性能较好的情况下延迟极低。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">幕享是免费使用的吗？</button>
+                        <div class="faq-answer">
+                            <p>幕享提供基础功能免费版，满足日常个人娱乐和轻度办公需求。高级功能如 4K 超清传输、多屏互动等，可能需要订阅会员服务。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">支持哪些投屏协议？</button>
+                        <div class="faq-answer">
+                            <p>幕享支持 AirPlay、Miracast、DLNA 以及自研协议，广泛兼容主流品牌设备。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download CTA -->
+        <section id="download" class="section">
+            <div class="container" style="text-align: center; background: linear-gradient(135deg, #0066ff 0%, #00c6ff 100%); border-radius: 20px; padding: 60px 40px; color: white;">
+                <h2 style="font-size: 32px; margin-bottom: 16px;">准备好体验无线投屏了吗？</h2>
+                <p style="margin-bottom: 32px; opacity: 0.9; font-size: 18px;">立即下载幕享客户端，让大屏连接变得前所未有的简单。</p>
+                <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+                    <button class="btn-primary" style="background: white; color: var(--primary-color);">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+                        iOS 下载
+                    </button>
+                    <button class="btn-primary" style="background: white; color: var(--primary-color);">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3,20.5V3.5C3,2.91,3.34,2.39,3.84,2.15L13.69,12L3.84,21.85C3.34,21.6,3,21.09,3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.3,12.85L16.81,15.12L14.54,12.85L16.81,10.58L20.3,12.85M16.81,8.67L14.54,6.4L6.05,14.89L16.81,8.67M20.3,11.15L16.81,8.88L14.54,11.15L16.81,13.42L20.3,11.15Z"/></svg>
+                        Android 下载
+                    </button>
+                    <button class="btn-primary" style="background: white; color: var(--primary-color);">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z"/></svg>
+                        Windows 下载
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h2>幕享</h2>
+                    <p>致力于为用户提供最稳定、高效的无线投屏解决方案，打破设备壁垒，连接无限可能。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>产品</h4>
+                    <ul>
+                        <li><a href="#">功能介绍</a></li>
+                        <li><a href="#">下载中心</a></li>
+                        <li><a href="#">更新日志</a></li>
+                        <li><a href="#">API 文档</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>支持</h4>
+                    <ul>
+                        <li><a href="#">帮助中心</a></li>
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="#">联系我们</a></li>
+                        <li><a href="#">意见反馈</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关于</h4>
+                    <ul>
+                        <li><a href="#">公司简介</a></li>
+                        <li><a href="#">加入我们</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">服务条款</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 幕享科技保留所有权利。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ accordion logic
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                const isActive = button.classList.contains('active');
+
+                // Close all other answers
+                document.querySelectorAll('.faq-question').forEach(b => {
+                    b.classList.remove('active');
+                    b.nextElementSibling.style.maxHeight = null;
+                });
+
+                // Toggle current
+                if (!isActive) {
+                    button.classList.add('active');
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                }
+            });
+        });
+    </script>
+</body>
+                          </html>
