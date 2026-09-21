@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="福清中招网提供2024年福清市中考志愿填报指南、高中录取分数线查询、中招政策解读及招生计划查询，是福清考生和家长最权威的中招信息服务平台。">
+    <meta name="keywords" content="福清中招网,福清中考分数线,福清高中录取,福清中考志愿,福清中招政策">
+    <title>福清中招网-福清市中考招生政策与录取查询平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --primary-dark: #004494;
+            --accent-color: #f39c12;
+            --text-main: #333333;
+            --text-light: #666666;
+            --bg-body: #f4f6f9;
+            --bg-white: #ffffff;
+            --border-color: #e1e4e8;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+            --radius-md: 8px;
+            --radius-lg: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-white);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-top {
+            background-color: var(--primary-dark);
+            color: white;
+            font-size: 0.85rem;
+            padding: 8px 0;
+        }
+
+        .header-top .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-main {
+            padding: 15px 0;
+        }
+
+        .header-main .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            font-weight: 600;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-menu a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -24px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        /* Search Box */
+        .search-box {
+            background: white;
+            padding: 10px;
+            border-radius: 50px;
+            display: inline-flex;
+            width: 100%;
+            max-width: 600px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        .search-box input {
+            flex: 1;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1rem;
+            outline: none;
+            border-radius: 50px 0 0 50px;
+        }
+
+        .search-box button {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .search-box button:hover {
+            background-color: #e67e22;
+        }
+
+        /* Main Content */
+        main {
+            padding: 40px 0;
+        }
+
+        /* Quick Links Grid */
+        .quick-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .link-card {
+            background: var(--bg-white);
+            padding: 25px;
+            border-radius: var(--radius-md);
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid var(--border-color);
+        }
+
+        .link-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-color);
+        }
+
+        .link-card .icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .link-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .link-card p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* Sections Layout */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-menu {
+                display: none; /* Simplified for mobile */
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .section-title a {
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            font-weight: normal;
+        }
+
+        /* Data Table */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--bg-white);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .data-table th, .data-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .data-table th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .data-table tr:hover {
+            background-color: #f1f7ff;
+        }
+
+        .data-table .tag {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .tag-new {
+            background-color: #e3f2fd;
+            color: #1976d2;
+        }
+
+        .tag-hot {
+            background-color: #ffebee;
+            color: #d32f2f;
+        }
+
+        /* Sidebar */
+        .sidebar-card {
+            background: var(--bg-white);
+            padding: 20px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 20px;
+        }
+
+        .sidebar-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .sidebar-list li:last-child {
+            border-bottom: none;
+        }
+
+        .sidebar-list a {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.95rem;
+        }
+
+        .sidebar-list a:hover {
+            color: var(--primary-color);
+        }
+
+        .sidebar-list .date {
+            font-size: 0.8rem;
+            color: #999;
+        }
+
+        /* Notice Board */
+        .notice-board {
+            background-color: #fff8e1;
+            border-left: 4px solid var(--accent-color);
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+
+        .notice-board h4 {
+            color: #b7791f;
+            margin-bottom: 10px;
+        }
+
+        .notice-board ul li {
+            position: relative;
+            padding-left: 15px;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+
+        .notice-board ul li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: var(--bg-white);
+            padding: 40px;
+            border-radius: var(--radius-lg);
+            margin-top: 40px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--text-main);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .faq-answer {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            padding-left: 20px;
+            border-left: 2px solid #ddd;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #bdc3c7;
+            padding: 50px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Utility */
+        .text-center { text-align: center; }
+        .mt-2 { margin-top: 10px; }
+        .mb-2 { margin-bottom: 10px; }
+        .text-small { font-size: 0.85rem; }
+
+    </style>
+</head>
+<body>
+
+    <!-- 顶部通告栏 -->
+    <div class="header-top">
+        <div class="container">
+            <span>欢迎来到福清中招网，专注福清市中考招生信息发布与查询服务。</span>
+            <span>更新时间：2024年6月15日</span>
+        </div>
+    </div>
+
+    <!-- 头部导航 -->
+    <header>
+        <div class="header-main">
+            <div class="container">
+                <a href="#" class="logo">
+                    福清中招网
+                    <span>2024招生服务</span>
+                </a>
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="#" class="active">首页</a></li>
+                        <li><a href="#">政策文件</a></li>
+                        <li><a href="#">录取查询</a></li>
+                        <li><a href="#">高中名单</a></li>
+                        <li><a href="#">常见问题</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- 首屏区域 -->
+    <section class="hero">
+        <div class="container">
+            <h1>福清市中考志愿填报与录取查询平台</h1>
+            <p>权威发布招生政策、录取分数线及招生计划，为您的升学之路保驾护航。</p>
+            <div class="search-box">
+                <input type="text" placeholder="请输入学校名称或查询关键词...">
+                <button type="button">查询</button>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        
+        <!-- 核心功能区 -->
+        <section class="quick-links">
+            <div class="link-card">
+                <span class="icon">📊</span>
+                <h3>录取分数线</h3>
+                <p>2024年福清各高中录取分数统计</p>
+            </div>
+            <div class="link-card">
+                <span class="icon">📝</span>
+                <h3>志愿填报指南</h3>
+                <p>最新中招志愿填报规则与流程</p>
+            </div>
+            <div class="link-card">
+                <span class="icon">🏫</span>
+                <h3>高中招生计划</h3>
+                <p>全市高中阶段学校招生名额公示</p>
+            </div>
+            <div class="link-card">
+                <span class="icon">⚙️</span>
+                <h3>常见问题</h3>
+                <p>中招报名、体检及资格审核说明</p>
+            </div>
+        </section>
+
+        <!-- 主要内容区 -->
+        <div class="content-grid">
+            <!-- 左侧内容 -->
+            <div class="main-column">
+                
+                <!-- 最新公告 -->
+                <section class="mb-2">
+                    <div class="section-title">
+                        <h2>最新公告</h2>
+                        <a href="#">查看更多 &raquo;</a>
+                    </div>
+                    <div class="notice-board">
+                        <h4>重要通知</h4>
+                        <ul>
+                            <li><a href="#">关于公布2024年福清市普通高中招生计划的通知</a></li>
+                            <li><a href="#">福清市2024年中考成绩查询入口开放通知</a></li>
+                            <li><a href="#">2024年福清市高中阶段学校招生工作实施方案</a></li>
+                            <li><a href="#">关于规范普通高中招生秩序的公告</a></li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- 分数线数据 -->
+                <section class="mb-2">
+                    <div class="section-title">
+                        <h2>录取分数线参考</h2>
+                        <a href="#">查看完整榜单 &raquo;</a>
+                    </div>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>学校名称</th>
+                                <th>批次</th>
+                                <th>录取分数</th>
+                                <th>位次</th>
+                                <th>状态</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>福清市第一中学</td>
+                                <td>第一批</td>
+                                <td>678.5</td>
+                                <td>150</td>
+                                <td><span class="tag tag-hot">已结束</span></td>
+                            </tr>
+                            <tr>
+                                <td>福清市元洪高级中学</td>
+                                <td>第一批</td>
+                                <td>652.0</td>
+                                <td>420</td>
+                                <td><span class="tag tag-hot">已结束</span></td>
+                            </tr>
+                            <tr>
+                                <td>福清市融城中学</td>
+                                <td>第一批</td>
+                                <td>645.3</td>
+                                <td>580</td>
+                                <td><span class="tag tag-hot">已结束</span></td>
+                            </tr>
+                            <tr>
+                                <td>福清市高山中学</td>
+                                <td>第一批</td>
+                                <td>610.8</td>
+                                <td>1200</td>
+                                <td><span class="tag tag-new">进行中</span></td>
+                            </tr>
+                            <tr>
+                                <td>福清市城头中学</td>
+                                <td>第一批</td>
+                                <td>605.2</td>
+                                <td>1350</td>
+                                <td><span class="tag tag-new">进行中</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- 政策解读 -->
+                <section class="faq-section">
+                    <div class="section-title">
+                        <h2>政策解读与指南</h2>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">如何查询中考成绩？</div>
+                        <div class="faq-answer">
+                            中考成绩通常在考试结束后的一周左右公布。请关注“福清中招网”首页的“成绩查询”入口，或使用短信查询服务。查询时请准确输入考生号和身份证后六位。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">什么是“平行志愿”？</div>
+                        <div class="faq-answer">
+                            平行志愿是指考生在填报志愿时，将心仪的学校按意愿顺序排列。系统会根据分数从高到低检索，一旦符合条件即被投档。建议考生合理拉开梯度，避免扎堆。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">普通高中录取有哪些批次？</div>
+                        <div class="faq-answer">
+                            福清市普通高中录取一般分为提前批、第一批（重点高中）、第二批（一般高中）和第三批（中职学校）。不同批次录取时间不同，请务必关注官方时间节点。
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- 右侧侧边栏 -->
+            <aside class="sidebar">
+                
+                <!-- 招生计划 -->
+                <div class="sidebar-card">
+                    <h3 style="margin-bottom:15px; font-size:1.1rem;">招生计划</h3>
+                    <ul class="sidebar-list">
+                        <li><a href="#">2024年福清一中招生计划</a> <span class="date">600人</span></li>
+                        <li><a href="#">2024年元洪高中招生计划</a> <span class="date">550人</span></li>
+                        <li><a href="#">2024年融城中学招生计划</a> <span class="date">800人</span></li>
+                        <li><a href="#">2024年中职学校招生计划</a> <span class="date">1200人</span></li>
+                        <li><a href="#">特长生招生计划一览表</a> <span class="date">详情</span></li>
+                    </ul>
+                </div>
+
+                <!-- 常用工具 -->
+                <div class="sidebar-card">
+                    <h3 style="margin-bottom:15px; font-size:1.1rem;">常用工具</h3>
+                    <div style="text-align:center;">
+                        <button style="display:block; width:100%; padding:10px; margin-bottom:10px; background:#f0f0f0; border:none; cursor:pointer; border-radius:4px;">志愿模拟填报</button>
+                        <button style="display:block; width:100%; padding:10px; background:#f0f0f0; border:none; cursor:pointer; border-radius:4px;">分数线对比计算器</button>
+                    </div>
+                </div>
+
+                <!-- 联系方式 -->
+                <div class="sidebar-card">
+                    <h3 style="margin-bottom:15px; font-size:1.1rem;">联系我们</h3>
+                    <p class="text-small mb-2">如果您在招生政策或查询过程中遇到问题，欢迎咨询：</p>
+                    <p class="text-small"><strong>电话：</strong>0591-12345678</p>
+                    <p class="text-small"><strong>邮箱：</strong>service@fqzhongzhao.com</p>
+                    <p class="text-small"><strong>地址：</strong>福清市行政服务中心3楼</p>
+                </div>
+
+            </aside>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于福清中招网</h4>
+                    <p class="text-small">福清中招网是福清市教育局指定的官方招生信息发布平台，致力于为全市考生和家长提供及时、准确、权威的招生资讯服务。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">中考政策</a></li>
+                        <li><a href="#">录取查询</a></li>
+                        <li><a href="#">成绩查询</a></li>
+                        <li><a href="#">志愿填报</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>热门学校</h4>
+                    <ul>
+                        <li><a href="#">福清一中</a></li>
+                        <li><a href="#">元洪高中</a></li>
+                        <li><a href="#">融城中学</a></li>
+                        <li><a href="#">华侨中学</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 福清中招网 版权所有 | 技术支持：福清市教育信息化中心</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+                  </html>
