@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>王者荣耀周年庆-官方盛典活动、皮肤返场与福利汇总</title>
+    <meta name="description" content="本站提供王者荣耀周年庆完整攻略，包含历年庆典时间、限定皮肤返场规则、周年庆专属福利领取、活动副本玩法介绍及历年庆典精彩回顾。">
+    <meta name="keywords" content="王者荣耀周年庆, 王者荣耀庆典, 皮肤返场, 王者荣耀福利, 王者荣耀活动">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-gold: #ff9d00;
+            --primary-red: #e60012;
+            --bg-dark: #0f0f0f;
+            --bg-card: #1f1f1f;
+            --text-main: #ffffff;
+            --text-sub: #a0a0a0;
+            --spacing-unit: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 顶部导航 */
+        header {
+            background: rgba(15, 15, 15, 0.95);
+            border-bottom: 1px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-gold);
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-gold);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), var(--bg-dark)), 
+                        url('https://picsum.photos/seed/wzry_anniversary/1600/900.jpg') no-repeat center center/cover;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            background: linear-gradient(45deg, #fff, var(--primary-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #ddd;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-primary {
+            background: linear-gradient(90deg, var(--primary-red), #ff4d4d);
+            color: white;
+            box-shadow: 0 4px 15px rgba(230, 0, 18, 0.4);
+        }
+
+        .btn-gold {
+            background: linear-gradient(90deg, var(--primary-gold), #ffcc00);
+            color: #000;
+            box-shadow: 0 4px 15px rgba(255, 157, 0, 0.4);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        /* 通用区块样式 */
+        section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-sub);
+        }
+
+        /* 玩法分类 */
+        .game-modes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .mode-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            border: 1px solid #333;
+        }
+
+        .mode-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-gold);
+        }
+
+        .mode-img {
+            height: 160px;
+            background-color: #333;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .mode-info {
+            padding: 20px;
+        }
+
+        .mode-info h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .mode-info p {
+            font-size: 14px;
+            color: var(--text-sub);
+        }
+
+        /* 皮肤返场 */
+        .skin-showcase {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .skin-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            aspect-ratio: 1;
+        }
+
+        .skin-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s;
+        }
+
+        .skin-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            padding: 15px;
+        }
+
+        .skin-overlay h4 {
+            font-size: 16px;
+        }
+
+        .skin-overlay span {
+            font-size: 12px;
+            color: var(--primary-gold);
+        }
+
+        /* 福利与规则 */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .benefit-item {
+            background: #252525;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary-gold);
+        }
+
+        .benefit-item h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .benefit-item ul {
+            margin-top: 10px;
+        }
+
+        .benefit-item li {
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #ccc;
+            list-style-type: disc;
+            list-style-position: inside;
+        }
+
+        /* 历年回顾 */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 30px;
+            align-items: center;
+        }
+
+        .timeline-year {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-gold);
+            width: 100px;
+            flex-shrink: 0;
+        }
+
+        .timeline-content {
+            background: var(--bg-card);
+            padding: 20px;
+            border-radius: 8px;
+            width: 100%;
+            border: 1px solid #333;
+        }
+
+        .timeline-content h4 {
+            margin-bottom: 5px;
+            color: #fff;
+        }
+
+        .timeline-content p {
+            font-size: 14px;
+            color: var(--text-sub);
+        }
+
+        /* FAQ */
+        .faq-item {
+            background: var(--bg-card);
+            margin-bottom: 10px;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+        }
+
+        .faq-question:hover {
+            background: #2a2a2a;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-sub);
+            font-size: 14px;
+            display: none;
+            border-top: 1px solid #333;
+            padding-top: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* 页脚 */
+        footer {
+            background: #050505;
+            padding: 50px 0 20px;
+            border-top: 1px solid #333;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-info p {
+            color: var(--text-sub);
+            font-size: 14px;
+            margin-top: 15px;
+            max-width: 400px;
+        }
+
+        .footer-links h4 {
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--text-sub);
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-gold);
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #222;
+            padding-top: 20px;
+            color: #666;
+            font-size: 12px;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .skin-showcase {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-inner">
+            <div class="logo">王者<span>周年庆</span></div>
+            <nav class="nav-links">
+                <a href="#" class="active">首页</a>
+                <a href="#modes">庆典玩法</a>
+                <a href="#skins">限定皮肤</a>
+                <a href="#benefits">福利领取</a>
+                <a href="#history">庆典回顾</a>
+            </nav>
+            <button class="btn btn-gold" style="padding: 8px 20px; font-size: 14px;">立即登录</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>荣耀十载，热血再燃</h1>
+                <p>探索王者荣耀周年庆的无限魅力，获取限定皮肤、参与周年庆典专属玩法、赢取海量游戏道具与福利奖励。</p>
+                <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                    <a href="#skins" class="btn btn-gold">查看限定皮肤</a>
+                    <a href="#benefits" class="btn btn-primary">领取庆典福利</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 玩法分类 -->
+        <section id="modes" class="container">
+            <div class="section-title">
+                <h2>庆典专属玩法</h2>
+                <p>周年庆期间，峡谷中将推出全新模式与活动，体验不一样的战斗乐趣。</p>
+            </div>
+            <div class="game-modes">
+                <div class="mode-card">
+                    <div class="mode-img" style="background-image: url('https://picsum.photos/seed/wzry_mode1/400/300.jpg');"></div>
+                    <div class="mode-info">
+                        <h3>无限乱斗模式</h3>
+                        <p>所有英雄免费，技能CD大幅缩减，享受极致的快节奏对战体验，适合快速上分。</p>
+                    </div>
+                </div>
+                <div class="mode-card">
+                    <div class="mode-img" style="background-image: url('https://picsum.photos/seed/wzry_mode2/400/300.jpg');"></div>
+                    <div class="mode-info">
+                        <h3>赏金联赛</h3>
+                        <p>组队参与排位赛，根据段位结算赏金，可兑换稀有道具与皮肤碎片，越战越勇。</p>
+                    </div>
+                </div>
+                <div class="mode-card">
+                    <div class="mode-img" style="background-image: url('https://picsum.photos/seed/wzry_mode3/400/300.jpg');"></div>
+                    <div class="mode-info">
+                        <h3>5v5 王者峡谷</h3>
+                        <p>经典模式回归，开启特殊地图事件，参与周年庆签到任务，赢取专属纪念头像框。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 限定皮肤 -->
+        <section id="skins" class="container">
+            <div class="section-title">
+                <h2>周年限定皮肤</h2>
+                <p>每年周年庆都会推出一款传说级限定皮肤，拥有独特的技能特效与回城动画。</p>
+            </div>
+            <div class="skin-showcase">
+                <div class="skin-item">
+                    <img src="https://picsum.photos/seed/skin1/300/300.jpg" alt="周年庆皮肤示例">
+                    <div class="skin-overlay">
+                        <h4>龙族传说</h4>
+                        <span>传说级 · 龙年限定</span>
+                    </div>
+                </div>
+                <div class="skin-item">
+                    <img src="https://picsum.photos/seed/skin2/300/300.jpg" alt="周年庆皮肤示例">
+                    <div class="skin-overlay">
+                        <h4>星之守护者</h4>
+                        <span>传说级 · 星光系列</span>
+                    </div>
+                </div>
+                <div class="skin-item">
+                    <img src="https://picsum.photos/seed/skin3/300/300.jpg" alt="周年庆皮肤示例">
+                    <div class="skin-overlay">
+                        <h4>凤求凰</h4>
+                        <span>传说级 · 赤金系列</span>
+                    </div>
+                </div>
+                <div class="skin-item">
+                    <img src="https://picsum.photos/seed/skin4/300/300.jpg" alt="周年庆皮肤示例">
+                    <div class="skin-overlay">
+                        <h4>凤仪之诏</h4>
+                        <span>传说级 · 皇室系列</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 福利与规则 -->
+        <section id="benefits" class="container">
+            <div class="section-title">
+                <h2>福利与参与指南</h2>
+                <p>如何获取周年庆专属奖励？这里有最全的参与规则与福利领取攻略。</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <h3>登录福利</h3>
+                    <p>活动期间，每日登录游戏即可领取金币、铭文碎片及限定头像框。连续签到7天可获得史诗皮肤体验卡。</p>
+                    <ul>
+                        <li>每日登录：金币+100</li>
+                        <li>累计签到：限定头像框</li>
+                        <li>全勤奖励：皮肤体验卡</li>
+                    </ul>
+                </div>
+                <div class="benefit-item">
+                    <h3>任务奖励</h3>
+                    <p>完成指定游戏任务（如参与5场对局、获得MVP等），可累计周年庆积分，积分可在积分商城兑换稀有道具。</p>
+                    <ul>
+                        <li>参与对局：+10积分</li>
+                        <li>获得MVP：+50积分</li>
+                        <li>购买皮肤：额外积分加成</li>
+                    </ul>
+                </div>
+                <div class="benefit-item">
+                    <h3>兑换商城</h3>
+                    <p>使用周年庆积分兑换心仪的奖励，包括体验卡、铭文碎片、点券抵扣券等，数量有限，先到先得。</p>
+                    <ul>
+                        <li>传说皮肤体验卡</li>
+                        <li>五级铭文碎片包</li>
+                        <li>点券抵扣券</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 历年回顾 -->
+        <section id="history" class="container">
+            <div class="section-title">
+                <h2>荣耀足迹 · 历年庆典回顾</h2>
+                <p>从2015到2024，见证王者荣耀的每一次成长与蜕变。</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">2015</div>
+                    <div class="timeline-content">
+                        <h4>初露锋芒</h4>
+                        <p>第一届周年庆，开启“五岳”系列皮肤，确立了周年庆推出限定皮肤的传统。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2016</div>
+                    <div class="timeline-content">
+                        <h4>英雄集结</h4>
+                        <p>推出“五虎上将”系列，英雄数量突破60位，庆典活动规模首次大幅扩展。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2018</div>
+                    <div class="timeline-content">
+                        <h4>周年盛典</h4>
+                        <p>举办首届线上周年庆典晚会，推出“源计划”系列，开启电竞化新篇章。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2020</div>
+                    <div class="timeline-content">
+                        <h4>云端之上</h4>
+                        <p>推出“云端筑梦师”系列，庆典玩法引入跨服匹配，增强玩家互动体验。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="container">
+            <div class="section-title">
+                <h2>常见问题解答</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item active">
+                    <div class="faq-question">周年庆限定皮肤什么时候返场？<span>+</span></div>
+                    <div class="faq-answer">限定皮肤通常在周年庆期间上架，部分热门皮肤可能会在后续的返场活动中再次出现，具体请关注游戏内公告。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">积分商城的道具可以兑换几次？<span>+</span></div>
+                    <div class="faq-answer">积分商城中的道具通常每人限兑一次，请合理安排积分进行兑换。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">周年庆活动结束后奖励会消失吗？<span>+</span></div>
+                    <div class="faq-answer">活动奖励通常在活动结束后一段时间内可以领取，请及时前往邮件或活动界面领取，以免过期失效。</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <div class="logo">王者<span>周年庆</span></div>
+                    <p>本站为玩家提供王者荣耀周年庆攻略、活动资讯及福利汇总，致力于打造最全面的游戏庆典参考平台。</p>
+                </div>
+                <div class="footer-links">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">游戏首页</a></li>
+                        <li><a href="#">赛事中心</a></li>
+                        <li><a href="#">英雄图鉴</a></li>
+                        <li><a href="#">战绩查询</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>支持服务</h4>
+                    <ul>
+                        <li><a href="#">客服中心</a></li>
+                        <li><a href="#">玩家社区</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">用户协议</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2024 王者荣耀周年庆攻略站. All Rights Reserved. 本页面内容仅供玩家参考，与腾讯游戏官方无直接关联。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ 交互逻辑
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+                
+                // 切换图标
+                const span = item.querySelector('span');
+                span.textContent = parent.classList.contains('active') ? '-' : '+';
+            });
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target){
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
