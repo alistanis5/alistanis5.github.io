@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="桃花小妹下载 - 提供经典台湾偶像剧《桃花小妹》高清完整版在线观看、剧情介绍、演员表及剧集资源指南。">
+    <meta name="keywords" content="桃花小妹下载, 桃花小妹, 台湾偶像剧, 偶像剧下载, 剧情介绍">
+    <title>桃花小妹下载 - 经典台湾偶像剧高清资源与剧情指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #e91e63;
+            --secondary-color: #f8bbd0;
+            --accent-color: #ff4081;
+            --text-dark: #333333;
+            --text-gray: #666666;
+            --bg-light: #fdf6f9;
+            --white: #ffffff;
+            --shadow: 0 4px 15px rgba(233, 30, 99, 0.1);
+            --radius: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            background-image: radial-gradient(circle at 10% 20%, #fff0f5 0%, #fdf6f9 90%);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 15px 0;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 40px;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+        }
+
+        .hero-poster {
+            width: 200px;
+            height: 280px;
+            background-color: #eee;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            position: relative;
+        }
+
+        .hero-poster img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-info h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .hero-tags {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            background: #ffebee;
+            color: var(--primary-color);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(233, 30, 99, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(233, 30, 99, 0.5);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            margin-left: 10px;
+        }
+
+        .btn-outline:hover {
+            background: var(--secondary-color);
+        }
+
+        /* Info Grid */
+        .info-section {
+            padding: 40px 0;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            padding-left: 15px;
+            border-left: 5px solid var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .info-card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: var(--radius);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            transition: transform 0.3s;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .info-item {
+            margin-bottom: 15px;
+        }
+
+        .info-label {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            margin-bottom: 5px;
+        }
+
+        .info-value {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        /* Episodes Section */
+        .episodes-section {
+            background: var(--white);
+            padding: 40px 0;
+            margin-top: 40px;
+        }
+
+        .episode-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .episode-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .ep-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--bg-light);
+            color: var(--text-gray);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .ep-btn:hover {
+            background: var(--primary-color);
+            color: var(--white);
+            border-color: var(--accent-color);
+        }
+
+        .ep-title {
+            margin-top: 8px;
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+
+        /* Synopsis */
+        .synopsis-section {
+            padding: 40px 0;
+        }
+
+        .synopsis-content {
+            background: var(--white);
+            padding: 30px;
+            border-radius: var(--radius);
+            line-height: 1.8;
+            color: #444;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 40px 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            margin-bottom: 15px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--white);
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            background: #fafafa;
+            color: var(--text-gray);
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 20px 20px;
+            max-height: 200px;
+        }
+
+        /* Footer */
+        footer {
+            background: #fff;
+            padding: 40px 0 20px;
+            margin-top: 60px;
+            border-top: 1px solid #eee;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            color: #999;
+            font-size: 0.85rem;
+            padding-top: 20px;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero-card {
+                flex-direction: column;
+                padding: 25px;
+            }
+
+            .hero-poster {
+                width: 160px;
+                height: 220px;
+            }
+
+            .hero-info h1 {
+                font-size: 1.8rem;
+            }
+
+            .btn {
+                width: 100%;
+                margin: 10px 0 0 0;
+                text-align: center;
+            }
+
+            .btn-outline {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">
+                桃花小妹 <span>TV</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#episodes">全集列表</a></li>
+                    <li><a href="#synopsis">剧情简介</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn">☰</div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-card">
+                <div class="hero-poster">
+                    <!-- 使用随机种子生成符合风格的占位图 -->
+                    <img src="https://picsum.photos/seed/taifeng/400/600.jpg" alt="桃花小妹海报">
+                </div>
+                <div class="hero-info">
+                    <h1>桃花小妹</h1>
+                    <div class="hero-tags">
+                        <span class="tag">台湾偶像剧</span>
+                        <span class="tag">浪漫喜剧</span>
+                        <span class="tag">2009年</span>
+                    </div>
+                    <p style="color: #666; margin-bottom: 20px; max-width: 600px;">
+                        一部轻松幽默的台湾电视剧，讲述了一段段令人捧腹又感动的爱情故事。想要重温经典？查看下方的下载与观看指南。
+                    </p>
+                    <div>
+                        <a href="#episodes" class="btn btn-primary">观看全集</a>
+                        <a href="#synopsis" class="btn btn-outline">剧情简介</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Info Grid -->
+        <section class="info-section">
+            <div class="section-title">
+                <h2>剧集资料</h2>
+            </div>
+            <div class="info-grid">
+                <article class="info-card">
+                    <div class="info-item">
+                        <div class="info-label">导演</div>
+                        <div class="info-value">陈秀雯</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">主演</div>
+                        <div class="info-value">陈乔恩, 王心凌, 修杰楷, 翁滋蔓</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">类型</div>
+                        <div class="info-value">爱情 / 喜剧 / 校园</div>
+                    </div>
+                </article>
+
+                <article class="info-card">
+                    <div class="info-item">
+                        <div class="info-label">集数</div>
+                        <div class="info-value">20 集</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">首播时间</div>
+                        <div class="info-value">2009年</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">地区</div>
+                        <div class="info-value">中国台湾</div>
+                    </div>
+                </article>
+
+                <article class="info-card">
+                    <div class="info-item">
+                        <div class="info-label">格式</div>
+                        <div class="info-value">MP4 / MKV</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">画质</div>
+                        <div class="info-value">高清 / 720P</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">文件大小</div>
+                        <div class="info-value">约 300MB / 集</div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Episodes List -->
+        <section id="episodes" class="episodes-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>全集列表</h2>
+                </div>
+                <div class="episode-list">
+                    <!-- 生成部分剧集链接 -->
+                    <div class="episode-item">
+                        <div class="ep-btn">1</div>
+                        <span class="ep-title">第1集</span>
+                    </div>
+                    <div class="episode-item">
+                        <div class="ep-btn">2</div>
+                        <span class="ep-title">第2集</span>
+                    </div>
+                    <div class="episode-item">
+                        <div class="ep-btn">3</div>
+                        <span class="ep-title">第3集</span>
+                    </div>
+                    <div class="episode-item">
+                        <div class="ep-btn">4</div>
+                        <span class="ep-title">第4集</span>
+                    </div>
+                    <div class="episode-item">
+                        <div class="ep-btn">5</div>
+                        <span class="ep-title">第5集</span>
+                    </div>
+                    <div class="episode-item">
+                        <div class="ep-btn">6</div>
+                        <span class="ep-title">第6集</span>
+                    </div>
+                    <div class="episode-item">
+                        <div class="ep-btn">7</div>
+                        <span class="ep-title">第7集</span>
+                    </div>
+                    <div class="episode-item">
+                        <div class="ep-btn">8</div>
+                        <span class="ep-title">第8集</span>
+                    </div>
+                    <div class="episode-item">
+                        <div class="ep-btn">9</div>
+                        <span class="ep-title">第9集</span>
+                    </div>
+                    <div class="episode-item">
+                        <div class="ep-btn">10</div>
+                        <span class="ep-title">第10集</span>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 30px;">
+                    <button class="btn btn-outline" style="border-color: #ccc; color: #666;">加载更多集数</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Synopsis -->
+        <section id="synopsis" class="synopsis-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>剧情简介</h2>
+                </div>
+                <div class="synopsis-content">
+                    <p>《桃花小妹》是一部充满青春气息的浪漫喜剧。故事围绕着女主角桃花（陈乔恩 饰）展开，她虽然性格开朗，但总有些迷糊和天真。桃花的家庭背景复杂，拥有多位性格迥异的追求者，包括温文尔雅的医生、阳光帅气的运动型男以及性格古怪的富家子弟。</p>
+                    <br>
+                    <p>在一系列啼笑皆非的事件中，桃花逐渐成长，学会了如何面对爱情与友情。剧中不仅有甜蜜的恋爱桥段，也不乏温馨的家庭互动，展现了台湾偶像剧特有的细腻情感和幽默风格。对于喜欢轻松剧情的观众来说，这是一部不容错过的佳作。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="faq-section">
+            <div class="section-title">
+                <h2>常见问题 (FAQ)</h2>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">桃花小妹在哪里可以下载？</div>
+                <div class="faq-answer">
+                    本站提供《桃花小妹》的高清在线观看服务。关于下载功能，请根据您所在地区的版权法律法规，通过官方授权平台或正规视频网站获取资源，支持正版内容。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">全集播放需要会员吗？</div>
+                <div class="faq-answer">
+                    目前本站部分经典剧集提供免费试看，完整全集通常需要开通相应的会员服务。具体政策请查看页面上的实时提示。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">画质如何？支持什么设备？</div>
+                <div class="faq-answer">
+                    我们提供 720P 和 1080P 两种画质选项，支持 PC、平板电脑及智能手机浏览器播放，同时也兼容部分智能电视设备。
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <p style="color: #666; font-size: 0.9rem; line-height: 1.6;">
+                        专注提供经典华语影视剧资源整理与观看指南，致力于为影迷打造最便捷的追剧体验。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#">最新更新</a></li>
+                        <li><a href="#">热门榜单</a></li>
+                        <li><a href="#">帮助中心</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>友情链接</h4>
+                    <ul>
+                        <li><a href="#">台湾电视剧网</a></li>
+                        <li><a href="#">经典影视库</a></li>
+                        <li><a href="#">影视资讯</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 桃花小妹下载资源站. All Rights Reserved. 本站仅用于介绍和整理资源，不提供非法下载服务。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的FAQ交互逻辑
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // 关闭其他打开的项
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // 切换当前项状态
+                    item.classList.toggle('active');
+                });
+            });
+
+            // 移动端菜单切换（简单实现）
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            const navUl = document.querySelector('nav ul');
+            
+            menuBtn.addEventListener('click', () => {
+                if (navUl.style.display === 'flex') {
+                    navUl.style.display = 'none';
+                } else {
+                    navUl.style.display = 'flex';
+                    navUl.style.flexDirection = 'column';
+                    navUl.style.position = 'absolute';
+                    navUl.style.top = '60px';
+                    navUl.style.left = '0';
+                    navUl.style.width = '100%';
+                    navUl.style.background = 'white';
+                    navUl.style.padding = '20px';
+                    navUl.style.boxShadow = '0 5px 10px rgba(0,0,0,0.1)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
